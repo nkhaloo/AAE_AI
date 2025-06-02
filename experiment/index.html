@@ -4,26 +4,34 @@
   <meta charset="UTF-8">
   <title>Your jsPsych Experiment</title>
 
+  <!-- Load jsPsych CSS -->
   <link rel="stylesheet" href="jspsych/dist/jspsych.css">
+
+  <!-- Load core jsPsych library -->
   <script src="jspsych/dist/jspsych.js"></script>
+
+  <!-- Load the audio-button-response plugin -->
   <script src="jspsych/dist/plugin-audio-button-response.js"></script>
 </head>
 
 <body></body>
 
 <script>
-  // initialize jsPsych clearly
+  // 1. Initialize jsPsych (v7+)
   const jsPsych = initJsPsych();
 
-  // define your timeline clearly
-  const timeline = [{
-    type: 'audio-button-response',
-    stimulus: '../soundfiles/BM1_clean.wav',
-    prompt: 'Click the button after listening.',
-    choices: ['Continue']
-  }];
+  // 2. Define your timeline with correct ASCII hyphens
+  const timeline = [
+    {
+      type: 'audio-button-response',
+      stimulus: '../soundfiles/BM1_clean.wav',
+      prompt: 'Click the button after listening.',
+      choices: ['Continue']
+    }
+  ];
 
-  // run the timeline
+  // 3. Run the experiment
   jsPsych.run(timeline);
 </script>
-</html>
+</html> 
+
