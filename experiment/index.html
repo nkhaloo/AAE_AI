@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <title>My jsPsych Experiment</title>
 
-  <!-- Load jsPsych CSS (uses plain hyphens) -->
+  <!-- 1) Load jsPsych CSS -->
   <link rel="stylesheet" href="jspsych/dist/jspsych.css">
 
-  <!-- Load core jsPsych library -->
+  <!-- 2) Load the main jsPsych library -->
   <script src="jspsych/dist/jspsych.js"></script>
 
-  <!-- Load the audio-button-response plugin (plain hyphens) -->
+  <!-- 3) Load the renamed plugin file -->
   <script src="jspsych/dist/jspsych-audio-button-response.js"></script>
 </head>
 
 <body></body>
 
 <script>
-  // 1. Initialize jsPsych (v7+)
+  // 4) Initialize jsPsych (v7+)
   const jsPsych = initJsPsych();
 
-  // 2. Define timeline using plain ASCII hyphens in 'type'
+  // 5) Define your timeline using the exact plugin type
   const timeline = [
     {
       type: 'audio-button-response',
@@ -30,7 +30,8 @@
     }
   ];
 
-  // 3. Run the experiment
+  // 6) Run the experiment
   jsPsych.run(timeline);
 </script>
 </html>
+
