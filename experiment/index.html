@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <title>Your jsPsych Experiment</title>
 
-  <!-- Correct CSS path -->
   <link rel="stylesheet" href="jspsych/dist/jspsych.css">
 
-  <!-- Corrected jsPsych library & plugin paths -->
   <script src="jspsych/dist/jspsych.js"></script>
-  <script src="jspsych/dist/jspsych-audio-keyboard-response.js"></script>
+  <script src="jspsych/dist/plugin-audio-button-response.js"></script>
 </head>
 
 <body></body>
@@ -17,10 +15,10 @@
 <script>
   jsPsych.init({
     timeline: [{
-      type: 'audio-keyboard-response',
+      type: 'audio-button-response', // <- important update here, matches your plugin name
       stimulus: '../soundfiles/BM1_clean.wav',
-      prompt: 'Press any key after listening.',
-      choices: "ALL_KEYS"
+      prompt: 'Click the button after listening.',
+      choices: ['Continue'] // since button response plugin needs buttons
     }]
   });
 </script>
