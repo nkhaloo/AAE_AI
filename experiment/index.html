@@ -5,7 +5,6 @@
   <title>Your jsPsych Experiment</title>
 
   <link rel="stylesheet" href="jspsych/dist/jspsych.css">
-
   <script src="jspsych/dist/jspsych.js"></script>
   <script src="jspsych/dist/plugin-audio-button-response.js"></script>
 </head>
@@ -13,10 +12,10 @@
 <body></body>
 
 <script>
-  // First clearly initialize jsPsych (required in v7+)
+  // initialize jsPsych clearly
   const jsPsych = initJsPsych();
 
-  // Now define timeline exactly
+  // define your timeline clearly
   const timeline = [{
     type: 'audio-button-response',
     stimulus: '../soundfiles/BM1_clean.wav',
@@ -24,8 +23,7 @@
     choices: ['Continue']
   }];
 
-  // Finally, run experiment clearly
+  // run the timeline
   jsPsych.run(timeline);
 </script>
 </html>
-
