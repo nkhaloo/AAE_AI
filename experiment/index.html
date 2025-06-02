@@ -13,14 +13,19 @@
 <body></body>
 
 <script>
-  jsPsych.init({
-    timeline: [{
-      type: 'audio-button-response', // <- important update here, matches your plugin name
-      stimulus: '../soundfiles/BM1_clean.wav',
-      prompt: 'Click the button after listening.',
-      choices: ['Continue'] // since button response plugin needs buttons
-    }]
-  });
+  // First clearly initialize jsPsych (required in v7+)
+  const jsPsych = initJsPsych();
+
+  // Now define timeline exactly
+  const timeline = [{
+    type: 'audio-button-response',
+    stimulus: '../soundfiles/BM1_clean.wav',
+    prompt: 'Click the button after listening.',
+    choices: ['Continue']
+  }];
+
+  // Finally, run experiment clearly
+  jsPsych.run(timeline);
 </script>
 </html>
 
