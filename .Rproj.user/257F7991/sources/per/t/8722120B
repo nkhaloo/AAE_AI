@@ -1,0 +1,26 @@
+{
+    "id": "8722120B",
+    "path": "~/Desktop/AAVE_AI/src/analyze_vowels.R",
+    "project_path": "src/analyze_vowels.R",
+    "type": "r_source",
+    "hash": "3837820890",
+    "contents": "",
+    "dirty": true,
+    "created": 1745702084524.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "73,26",
+        "scrollLine": "66"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1745861027,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1748380349435,
+    "read_only": false,
+    "read_only_alternatives": []
+}
