@@ -2,36 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My jsPsych Experiment</title>
+  <title>My jsPsych v8 Experiment</title>
 
-  <!-- 1) Load jsPsych CSS -->
-  <link rel="stylesheet" href="jspsych/dist/jspsych.css">
+  <script type="module">
+    // Correct imports for jsPsych v8
+    import jsPsych from './jspsych/dist/jspsych.js';
+    import audioButtonResponse from './jspsych/dist/plugin-audio-button-response.js'; // restored name!
 
-  <!-- 2) Load the main jsPsych library -->
-  <script src="jspsych/dist/jspsych.js"></script>
+    // CSS Import
+    import './jspsych/dist/jspsych.css';
 
-  <!-- 3) Load the renamed plugin file -->
-  <script src="jspsych/dist/jspsych-audio-button-response.js"></script>
+    // Initialize jsPsych instance
+    const jsPsychInstance = jsPsych();
+
+    // Define your timeline
+    const timeline = [
+      {
+        type: audioButtonResponse,
+        stimulus: '../soundfiles/BM1_clean.wav',
+        prompt: 'Click the button after listening.',
+        choices: ['Continue']
+      }
+    ];
+
+    // Run the experiment
+    jsPsychInstance.run(timeline);
+  </script>
 </head>
-
 <body></body>
-
-<script>
-  // 4) Initialize jsPsych (v7+)
-  const jsPsych = initJsPsych();
-
-  // 5) Define your timeline using the exact plugin type
-  const timeline = [
-    {
-      type: 'audio-button-response',
-      stimulus: '../soundfiles/BM1_clean.wav',
-      prompt: 'Click the button after listening.',
-      choices: ['Continue']
-    }
-  ];
-
-  // 6) Run the experiment
-  jsPsych.run(timeline);
-</script>
 </html>
 
