@@ -1,10 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="../jspsych/dist"></script>
+  <script src="../jspsych/dist/jspsych-audio-keyboard-response.js"></script>
+  <link rel="stylesheet" href="../jspsych/jspsych.css">
+</head>
+<body></body>
 <script>
   jsPsych.init({
     timeline: [{
       type: 'audio-keyboard-response',
-      stimulus: 'soundfiles/BM1_clean.wav',
+      stimulus: '../soundfiles/BM1_clean.wav',
       prompt: 'Press any key after listening.',
       choices: "ALL_KEYS"
     }]
   });
 </script>
+</html>
