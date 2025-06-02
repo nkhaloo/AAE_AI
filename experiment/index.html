@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <title>Your jsPsych Experiment</title>
 
-  <!-- Correct CSS file location -->
-  <link rel="stylesheet" href="../jspsych/dist/jspsych.css">
+  <!-- Correct CSS file path -->
+  <link rel="stylesheet" href="jspsych/dist/jspsych.css">
 
-  <!-- Correct jsPsych library & plugin location -->
-  <script src="../jspsych/dist/jspsych.js"></script>
-  <script src="../jspsych/dist/jspsych-audio-keyboard-response.js"></script>
+  <!-- Correct jsPsych library and plugin paths -->
+  <script src="jspsych/dist/jspsych.js"></script>
+  <script src="jspsych/dist/jspsych-audio-keyboard-response.js"></script>
 </head>
 
 <body></body>
@@ -18,7 +18,7 @@
   jsPsych.init({
     timeline: [{
       type: 'audio-keyboard-response',
-      stimulus: '../soundfiles/BM1_clean.wav',
+      stimulus: '../soundfiles/BM1_clean.wav', <!-- This path is correct -->
       prompt: 'Press any key after listening.',
       choices: "ALL_KEYS"
     }]
