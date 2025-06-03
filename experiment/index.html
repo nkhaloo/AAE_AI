@@ -1,33 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>My jsPsych v8 Experiment</title>
 
-  <!-- Corrected CSS Loading (link tag instead of import) -->
+  <!-- Correct CSS loading (with a link tag) -->
   <link rel="stylesheet" href="jspsych/dist/jspsych.css">
 
   <script type="module">
-    // jsPsych v8 JavaScript module imports (correct)
     import jsPsych from './jspsych/dist/jspsych.js';
     import audioButtonResponse from './jspsych/dist/plugin-audio-button-response.js';
 
-    // Initialize jsPsych instance
     const jsPsychInstance = jsPsych();
 
-    // Define timeline using imported plugin directly
     const timeline = [
       {
-        type: audioButtonResponse, // direct reference, no quotes
+        type: audioButtonResponse, 
         stimulus: '../soundfiles/BM1_clean.wav',
         prompt: 'Click the button after listening.',
         choices: ['Continue']
       }
     ];
 
-    // Run the experiment
     jsPsychInstance.run(timeline);
   </script>
 </head>
-<body></body>
-</html>
