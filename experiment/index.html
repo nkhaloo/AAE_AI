@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simplest Audio Experiment</title>
+  <title>Simplest Audio Experiment (Fully Correct)</title>
 </head>
 
 <body>
-  <audio id="audioPlayer" src="../soundfiles/BM1_clean.wav"></audio>
+  <audio id="audioPlayer" src="soundfiles/BM1_clean.wav"></audio>
   <button id="playBtn">Play Audio</button>
   <button id="nextBtn" style="display:none;">Continue</button>
 
@@ -15,21 +15,17 @@
     const playBtn = document.getElementById('playBtn');
     const nextBtn = document.getElementById('nextBtn');
 
-    // Play audio when play button is clicked
     playBtn.addEventListener('click', () => {
       audioPlayer.play();
-      playBtn.style.display = 'none'; // hide play button after starting
+      playBtn.style.display = 'none';
     });
 
-    // Show "Continue" button when audio finishes
     audioPlayer.addEventListener('ended', () => {
-      nextBtn.style.display = 'inline'; // show continue button
+      nextBtn.style.display = 'inline';
     });
 
-    // When continue button is clicked, move to next step
     nextBtn.addEventListener('click', () => {
       alert("Audio completed. Moving to next step...");
-      // here, you can add logic for the next trial or question
     });
   </script>
 </body>
