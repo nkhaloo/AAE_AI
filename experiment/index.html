@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple jsPsych Experiment</title>
+  <title>Corrected jsPsych Experiment (v8)</title>
 
   <!-- jsPsych CSS -->
   <link rel="stylesheet" href="jspsych/dist/jspsych.css">
@@ -10,17 +10,14 @@
   <!-- jsPsych Core -->
   <script src="jspsych/dist/jspsych.js"></script>
 
-  <!-- jsPsych Plugin (traditional script import) -->
+  <!-- jsPsych Plugin -->
   <script src="jspsych/dist/plugin-audio-button-response.js"></script>
 </head>
 
 <body></body>
 
 <script>
-  // Initialize jsPsych (traditional style)
-  const jsPsychInstance = jsPsych();
-
-  // Simple trial setup (traditional string type)
+  // Do NOT call jsPsych as a function. Use the global jsPsych directly!
   const timeline = [
     {
       type: 'audio-button-response',
@@ -30,7 +27,7 @@
     }
   ];
 
-  // Run the experiment
-  jsPsychInstance.run(timeline);
+  // Directly run the timeline (no jsPsych() function call!)
+  jsPsych.run(timeline);
 </script>
 </html>
