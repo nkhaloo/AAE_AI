@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <title>My jsPsych v8 Experiment</title>
 
-  <script type="module">
-    // Correct imports for jsPsych v8
-    import jsPsych from './jspsych/dist/jspsych.js';
-    import audioButtonResponse from './jspsych/dist/plugin-audio-button-response.js'; // restored name!
+  <!-- Corrected CSS Loading (link tag instead of import) -->
+  <link rel="stylesheet" href="jspsych/dist/jspsych.css">
 
-    // CSS Import
-    import './jspsych/dist/jspsych.css';
+  <script type="module">
+    // jsPsych v8 JavaScript module imports (correct)
+    import jsPsych from './jspsych/dist/jspsych.js';
+    import audioButtonResponse from './jspsych/dist/plugin-audio-button-response.js';
 
     // Initialize jsPsych instance
     const jsPsychInstance = jsPsych();
 
-    // Define your timeline
+    // Define timeline using imported plugin directly
     const timeline = [
       {
-        type: audioButtonResponse,
+        type: audioButtonResponse, // direct reference, no quotes
         stimulus: '../soundfiles/BM1_clean.wav',
         prompt: 'Click the button after listening.',
         choices: ['Continue']
@@ -31,4 +31,3 @@
 </head>
 <body></body>
 </html>
-
