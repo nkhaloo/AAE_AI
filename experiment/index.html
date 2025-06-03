@@ -1,16 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>My jsPsych v8 Experiment</title>
 
-  <!-- Correct CSS loading (with a link tag) -->
+  <!-- Correct CSS loading -->
   <link rel="stylesheet" href="jspsych/dist/jspsych.css">
 
   <script type="module">
+    // Correct jsPsych v8 imports with named export
     import jsPsych from './jspsych/dist/jspsych.js';
-    import audioButtonResponse from './jspsych/dist/plugin-audio-button-response.js';
+    import { plugin as audioButtonResponse } from './jspsych/dist/plugin-audio-button-response.js';
 
+    // Initialize jsPsych instance
     const jsPsychInstance = jsPsych();
 
+    // Define your timeline correctly
     const timeline = [
       {
         type: audioButtonResponse, 
@@ -20,6 +25,9 @@
       }
     ];
 
+    // Run the experiment
     jsPsychInstance.run(timeline);
   </script>
 </head>
+<body></body>
+</html>
