@@ -2,32 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My jsPsych v8 Experiment</title>
-
-  <!-- Correct CSS loading -->
+  <title>Traditional jsPsych v8 Setup</title>
+  
   <link rel="stylesheet" href="jspsych/dist/jspsych.css">
 
-  <script type="module">
-    // Correct jsPsych v8 imports with named export
-    import jsPsych from './jspsych/dist/jspsych.js';
-    import { plugin as audioButtonResponse } from './jspsych/dist/plugin-audio-button-response.js';
-
-    // Initialize jsPsych instance
-    const jsPsychInstance = jsPsych();
-
-    // Define your timeline correctly
-    const timeline = [
-      {
-        type: audioButtonResponse, 
-        stimulus: '../soundfiles/BM1_clean.wav',
-        prompt: 'Click the button after listening.',
-        choices: ['Continue']
-      }
-    ];
-
-    // Run the experiment
-    jsPsychInstance.run(timeline);
-  </script>
+  <script src="jspsych/dist/jspsych.js"></script>
+  <script src="jspsych/dist/plugin-audio-button-response.js"></script>
 </head>
 <body></body>
+
+<script>
+  const jsPsychInstance = jsPsych();
+
+  const timeline = [
+    {
+      type: 'audio-button-response', // string here is correct in traditional imports
+      stimulus: '../soundfiles/BM1_clean.wav',
+      prompt: 'Click the button after listening.',
+      choices: ['Continue']
+    }
+  ];
+
+  jsPsychInstance.run(timeline);
+</script>
 </html>
