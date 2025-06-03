@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Traditional jsPsych v8 Setup</title>
   
-  <link rel="stylesheet" href="jspsych/dist/jspsych.css">
+  <link rel="stylesheet" href="jspsych/dist/jspsych.css" />
 
+  <!-- Load jsPsych core -->
   <script src="jspsych/dist/jspsych.js"></script>
+  <!-- Load the plugin -->
   <script src="jspsych/dist/plugin-audio-button-response.js"></script>
 </head>
 <body></body>
 
 <script>
-  const jsPsychInstance = jsPsych();
+  const jsPsychInstance = jsPsych.init();
 
   const timeline = [
     {
-      type: 'audio-button-response', // string here is correct in traditional imports
+      type: 'audio-button-response',
       stimulus: '../soundfiles/BM1_clean.wav',
       prompt: 'Click the button after listening.',
       choices: ['Continue']
