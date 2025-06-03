@@ -14,7 +14,8 @@
 <body></body>
 
 <script>
-  const jsPsychInstance = jsPsych.init();
+  // Initialize jsPsych v8
+  const jsPsychInstance = initJsPsych();
 
   const timeline = [
     {
@@ -25,6 +26,7 @@
     }
   ];
 
+  // Run the experiment
   jsPsychInstance.run(timeline);
 </script>
 </html>
