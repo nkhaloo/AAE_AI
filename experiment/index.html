@@ -2,32 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Corrected jsPsych Experiment (v8)</title>
-
-  <!-- jsPsych CSS -->
-  <link rel="stylesheet" href="jspsych/dist/jspsych.css">
-
-  <!-- jsPsych Core -->
-  <script src="jspsych/dist/jspsych.js"></script>
-
-  <!-- jsPsych Plugin -->
-  <script src="jspsych/dist/plugin-audio-button-response.js"></script>
+  <title>Simplest Audio Experiment</title>
 </head>
 
-<body></body>
+<body>
+  <audio id="audioPlayer" src="../soundfiles/BM1_clean.wav"></audio>
+  <button id="playBtn">Play Audio</button>
+  <button id="nextBtn" style="display:none;">Continue</button>
 
-<script>
-  // Do NOT call jsPsych as a function. Use the global jsPsych directly!
-  const timeline = [
-    {
-      type: 'audio-button-response',
-      stimulus: '../soundfiles/BM1_clean.wav',
-      prompt: 'Click the button after listening.',
-      choices: ['Continue']
-    }
-  ];
+  <script>
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playBtn = document.getElementById('playBtn');
+    const nextBtn = document.getElementById('nextBtn');
 
-  // Directly run the timeline (no jsPsych() function call!)
-  jsPsych.run(timeline);
-</script>
+    // Play audio when play button is clicked
+    playBtn.addEventListener('click', () => {
+      audioPlayer.play();
+      playBtn.style.display = 'none'; // hide play button after starting
+    });
+
+    // Show "Continue" button when audio finishes
+    audioPlayer.addEventListener('ended', () => {
+      nextBtn.style.display = 'inline'; // show continue button
+    });
+
+    // When continue button is clicked, move to next step
+    nextBtn.addEventListener('click', () => {
+      alert("Audio completed. Moving to next step...");
+      // here, you can add logic for the next trial or question
+    });
+  </script>
+</body>
 </html>
